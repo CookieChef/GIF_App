@@ -87,9 +87,28 @@ $(document).ready(function () {
                     var animalDiv = $("<div class=\"animal-item\">");
                     var rating = results[i].rating;
                     var p = $("<p>").text("Rating: " + rating);
+
+                    //this will make the image be animated and be still 
+                    var animated = results[i].images.fixed_height.url;
+                    var still = results[i].images.fixed_height_still.url;
+
+                    //this will create an image tag, add the attributes to the img 
+                    var animalImg =$("<img>");
+                    animalImg.attr("src", still);
+                    animalImg.attr("data-still", still);
+                    animalImg.attr("data-animate", animated);
+                    animalImg.attr("data-state", "still");
+                    animalImg.addClass("animal-image");
+
+                    //this appends 'adds' the ratings text stored in the 'p' var to the animalDiv
+                    animalDiv.append(p);
+                    //this will append 'adds' the animal image to the animalDiv
+                    animalDiv.append(animalImg);
                 }
-            })
-    })
+            });
+    });
+
+    
 
     renderBtn();
 })
