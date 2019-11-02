@@ -104,11 +104,24 @@ $(document).ready(function () {
                     animalDiv.append(p);
                     //this will append 'adds' the animal image to the animalDiv
                     animalDiv.append(animalImg);
+                    //this appends 'adds' the animalDiv with all its elements to where they will display
+                    $("#animals-display").append(animalDiv);
                 }
             });
     });
+    
+    $("#add-animal").on("click", function (event) {
+        event.preventDefault();
+        var newAnimal = $("input").eq(0).val();
+
+            if (newAnimal.length > 2) {
+                animals.push(newAnimal);
+            }
+            renderBtn();
+    });
 
     
+
 
     renderBtn();
 })
