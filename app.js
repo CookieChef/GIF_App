@@ -7,7 +7,7 @@ $(document).ready(function() {
     function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
       $(areaToAddTo).empty();
       for (var i = 0; i < arrayToUse.length; i++) {
-        var a = $("<button>");
+        var a = $("<button class=\"btn btn-outline-dark\">");
         a.addClass(classToAdd);
         a.attr("data-type", arrayToUse[i]);
         a.text(arrayToUse[i]);
