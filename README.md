@@ -15,3 +15,6 @@ css and editing: https://getbootstrap.com/
 
 ## Link to see the app:
 
+App: https://cookiechef.github.io/GIF_App/.
+
+GitHub Repository: https://github.com/CookieChef/GIF_App.git
