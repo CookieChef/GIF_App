@@ -1,0 +1,10 @@
+.container {
+    font-family: 'Big Shoulders Display', cursive;
+    text-align: center;
+}
+.jumbotron{
+    background-color: transparent;
+}
+.body{
+    background-color: wheat;
+}
