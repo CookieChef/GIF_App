@@ -7,17 +7,15 @@ $(document).ready(function () {
       for (var i=0; i<animals.length; i++) {
         var a = $("<button class=\"btn btn-outline-dark\">");
         a.addClass("<button>");
-        a.attr("data-type", animals[i]);
+        a.attr("data-name", animals[i]);
         a.text(animals[i]);
         $("#dump_buttons").append(a);
       }
     }
-    makeBtn();
 
-
-$(document).on("click", "#dump_buttons", function () {
-  var type = $(this).attr("data-type");
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=5";
+var showImg = function () {
+  var animal = $(this).attr("data-name");
+  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=5";
   $.ajax({
             url: queryURL,
             method: "GET"
@@ -45,8 +43,9 @@ $(document).on("click", "#dump_buttons", function () {
                   
 
 })
-})
+}
 
+var addNewAnimal = function () {
 $("#add_animal").on("click", function(event){
   event.preventDefault();
 
@@ -56,6 +55,10 @@ $("#add_animal").on("click", function(event){
   
   makeBtn();
 })
+}
+makeBtn();
+showImg();
+addNewAnimal ();
 //========================
 })
 
